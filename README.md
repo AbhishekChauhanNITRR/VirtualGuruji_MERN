@@ -94,5 +94,5 @@ This project is licensed under the MIT License.
 
 ## 🧑‍💻 Developed by
 
-**CodeHelp Team**  
-Date: 17-Feb-2023
+**Abhishek Chauhan**  
+Date: 19th May 2025 Onwards
