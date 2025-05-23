@@ -29,7 +29,7 @@ const sendingMail=async(email,otp)=>{
 
 otpSchema.pre("save",async function(next)
     {
-        await sendingMail(this.mail,this.otp);
+        await sendingMail(this.email,this.otp);
         next();
     }
 )

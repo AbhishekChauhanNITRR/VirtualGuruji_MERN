@@ -1,5 +1,6 @@
 const express=require('express');
-const { default: mongoose } = require('mongoose');
+const mongoose = require('mongoose');
+const { resetPasswordToken } = require('../controllers/ResetPassword');
 
 const userSchema=new mongoose.Schema({
     firstName:{
@@ -40,6 +41,12 @@ const userSchema=new mongoose.Schema({
     image:{
         type:String,//URL
         require:true
+    },
+    token:{
+        type:String
+    },
+    resetPasswordExpires:{
+        type:Date
     },
     courseProgress:[{
         type:mongoose.Schema.Types.ObjectId,
