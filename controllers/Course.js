@@ -1,6 +1,6 @@
 const Course=require('../models/Course')
 const User=require('../models/User')
-const Tag=require('../models/Tags')
+const Category=require('../models/category');
 const {uploadImageToCloudinary}=require('../utils/imageUploader')
 require('dotenv').config();
 
@@ -27,7 +27,7 @@ exports.createCourse=async(req,res)=>{
                 message:"Unverified instructor"
             })
         }
-        const tagDetails=await Tag.findById(tag);
+        const tagDetails=await Category.findById(tag);
         if(!tagDetails)
         {
             return res.status(401).json({
@@ -60,7 +60,7 @@ exports.createCourse=async(req,res)=>{
             {new:true}
         )
 
-        const updateTag=await Tag.findByIdAndUpdate(
+        const updateTag=await Category.findByIdAndUpdate(
             {_id:tag},
             {
                 $push:{
